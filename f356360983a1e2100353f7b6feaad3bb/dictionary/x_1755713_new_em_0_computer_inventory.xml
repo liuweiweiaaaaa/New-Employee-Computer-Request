@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="65e500da836922100353f7b6feaad3fc" label="Computer Inventory" max_length="40" name="x_1755713_new_em_0_computer_inventory" type="collection">
+        <element label="Assigned to" max_length="32" name="assigned_to" reference="sys_user" type="reference"/>
+        <element label="Stock Number" max_length="40" name="stock_number" type="integer"/>
+        <element label="Display name" max_length="32" name="display_name" reference="cmdb_hardware_product_model" type="reference"/>
+        <element label="Model number" max_length="32" name="model_number" reference="cmdb_hardware_product_model" type="reference"/>
+        <index name="index">
+            <element name="assigned_to"/>
+        </index>
+        <index name="index2">
+            <element name="display_name"/>
+        </index>
+        <index name="index3">
+            <element name="model_number"/>
+        </index>
+    </element>
+</database>
