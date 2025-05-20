@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="7caa84fe83eda2100353f7b6feaad30e" label="Computer Info" max_length="40" name="x_1755713_new_em_0_computer_info" type="collection">
+        <element label="Computer SN Number" max_length="40" name="computer_sn_number" type="string"/>
+        <element label="Computer Model" max_length="32" name="computer_model" reference="cmdb_hardware_product_model" type="reference"/>
+        <element label="Assigned To" max_length="32" name="assigned_to" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="assigned_to"/>
+        </index>
+        <index name="index2">
+            <element name="computer_model"/>
+        </index>
+    </element>
+</database>

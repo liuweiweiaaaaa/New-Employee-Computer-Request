@@ -3,6 +3,7 @@
         <element label="Assigned to" max_length="32" name="assigned_to" reference="sys_user" type="reference"/>
         <element label="Stock Number" max_length="40" name="stock_number" type="integer"/>
         <element label="Display name" max_length="32" name="display_name" reference="cmdb_hardware_product_model" type="reference"/>
+        <element label="Computer SN Number" max_length="100" name="computer_sn_number" type="string"/>
         <element label="Model number" max_length="32" name="model_number" reference="cmdb_hardware_product_model" type="reference"/>
         <index name="index">
             <element name="assigned_to"/>
