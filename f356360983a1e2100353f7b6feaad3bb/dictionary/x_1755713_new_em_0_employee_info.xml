@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="ae23303283e1e2100353f7b6feaad3be" label="Employee Info" max_length="40" name="x_1755713_new_em_0_employee_info" type="collection">
-        <element label="Manager Email" max_length="32" name="manager_email" reference="sys_user" type="reference"/>
         <element label="Employee Name" max_length="32" name="employee_name" reference="sys_user" type="reference"/>
-        <element label="Computer Approver" max_length="32" name="computer_approver" reference="sys_user" type="reference"/>
         <element choice="1" label="Status" max_length="40" name="status" type="choice">
             <choice>
                 <element inactive_on_update="false" label="not onboarded" value="0"/>
@@ -10,13 +8,7 @@
             </choice>
         </element>
         <index name="index">
-            <element name="computer_approver"/>
-        </index>
-        <index name="index2">
             <element name="employee_name"/>
-        </index>
-        <index name="index3">
-            <element name="manager_email"/>
         </index>
     </element>
 </database>
