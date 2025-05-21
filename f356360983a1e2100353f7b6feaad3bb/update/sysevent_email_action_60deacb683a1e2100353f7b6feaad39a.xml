@@ -36,7 +36,8 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p>Dear Manager Manager ${manager_email.name},</p>
+        <message_html><![CDATA[<p>${mail_script:<a href="https://dev271709.service-now.com/sys_script_email.do?sys_id=5113ee8783ed26100353f7b6feaad3c5&amp;sysparm_record_target=sys_script_email&amp;sysparm_record_row=1&amp;sysparm_record_rows=1&amp;sysparm_record_list=nameINcc_and_bcc_set%5EORDERBYname&amp;sysparm_nameofstack=70d42790-aba8-41a2-86e7-776f6e0bed39_bottomless&amp;sysparm_transaction_scope=f356360983a1e2100353f7b6feaad3bb" aria-label="Open record: cc_and_bcc_set">cc_and_bcc_set</a>}</p>
+<p>Dear Manager Manager ${manager_email.name},</p>
 <p>Your employee : ${employee_name} has successfully joined the company.</p>
 <p>Congratulations!</p>
 <p>&nbsp;</p>
@@ -62,7 +63,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>60deacb683a1e2100353f7b6feaad39a</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Onboard Complete Email</sys_name>
         <sys_overrides/>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
@@ -70,7 +71,7 @@
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
         <sys_update_name>sysevent_email_action_60deacb683a1e2100353f7b6feaad39a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-21 03:13:51</sys_updated_on>
+        <sys_updated_on>2025-05-21 06:21:56</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>
