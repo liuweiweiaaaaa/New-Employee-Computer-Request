@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="display_name" table="x_1755713_new_em_0_computer_inventory">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="model" table="x_1755713_new_em_0_computer_inventory">
         <active>true</active>
         <array>false</array>
         <attributes/>
@@ -13,7 +13,7 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Display name</column_label>
+        <column_label>Model</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -26,7 +26,7 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>display_name</element>
+        <element>model</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -51,14 +51,14 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-05-18 11:25:31</sys_created_on>
-        <sys_name>Display name</sys_name>
+        <sys_created_on>2025-05-21 08:47:48</sys_created_on>
+        <sys_name>Model</sys_name>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
         <sys_policy/>
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
-        <sys_update_name>sys_dictionary_x_1755713_new_em_0_computer_inventory_display_name</sys_update_name>
+        <sys_update_name>sys_dictionary_x_1755713_new_em_0_computer_inventory_model</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-18 11:25:31</sys_updated_on>
+        <sys_updated_on>2025-05-21 08:47:48</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

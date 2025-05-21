@@ -24,8 +24,8 @@
         <digestable>false</digestable>
         <enable_dynamic_translation>false</enable_dynamic_translation>
         <event_name>x_1755713_new_em_0.onboard.completed</event_name>
-        <event_parm_1>true</event_parm_1>
-        <event_parm_2>true</event_parm_2>
+        <event_parm_1>false</event_parm_1>
+        <event_parm_2>false</event_parm_2>
         <exclude_delegates>false</exclude_delegates>
         <force_delivery>false</force_delivery>
         <from/>
@@ -36,11 +36,10 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p>${mail_script:<a href="https://dev271709.service-now.com/sys_script_email.do?sys_id=5113ee8783ed26100353f7b6feaad3c5&amp;sysparm_record_target=sys_script_email&amp;sysparm_record_row=1&amp;sysparm_record_rows=1&amp;sysparm_record_list=nameINcc_and_bcc_set%5EORDERBYname&amp;sysparm_nameofstack=70d42790-aba8-41a2-86e7-776f6e0bed39_bottomless&amp;sysparm_transaction_scope=f356360983a1e2100353f7b6feaad3bb" aria-label="Open record: cc_and_bcc_set">cc_and_bcc_set</a>}</p>
+        <message_html><![CDATA[<p>${mail_script:cc_and_bcc_set}</p>
 <p>Dear Manager Manager ${manager_email.name},</p>
 <p>Your employee : ${employee_name} has successfully joined the company.</p>
 <p>Congratulations!</p>
-<p>&nbsp;</p>
 <p>Best Wishes</p>]]></message_html>
         <message_list/>
         <message_text/>
@@ -50,7 +49,7 @@
         <push_message_only>false</push_message_only>
         <recipient_fields/>
         <recipient_groups/>
-        <recipient_users/>
+        <recipient_users>c0ff22c7832166100353f7b6feaad3bd</recipient_users>
         <reply_to/>
         <send_self>true</send_self>
         <sms_alternate/>
@@ -63,7 +62,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>60deacb683a1e2100353f7b6feaad39a</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Onboard Complete Email</sys_name>
         <sys_overrides/>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
@@ -71,7 +70,7 @@
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
         <sys_update_name>sysevent_email_action_60deacb683a1e2100353f7b6feaad39a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-21 06:21:56</sys_updated_on>
+        <sys_updated_on>2025-05-21 07:07:35</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>
