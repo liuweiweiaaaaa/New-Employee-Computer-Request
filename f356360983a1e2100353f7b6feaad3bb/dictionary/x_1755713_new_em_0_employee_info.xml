@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="ae23303283e1e2100353f7b6feaad3be" label="Employee Info" max_length="40" name="x_1755713_new_em_0_employee_info" type="collection">
+        <element label="SN Number" max_length="40" name="sn_number" type="string"/>
+        <element label="Onboard Date" max_length="40" name="onboard_date" type="glide_date"/>
         <element label="Employee Name" max_length="32" name="employee_name" reference="sys_user" type="reference"/>
         <element choice="1" label="Status" max_length="40" name="status" type="choice">
             <choice>

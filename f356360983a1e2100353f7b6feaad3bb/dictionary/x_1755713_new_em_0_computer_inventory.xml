@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="65e500da836922100353f7b6feaad3fc" label="Computer Inventory" max_length="40" name="x_1755713_new_em_0_computer_inventory" type="collection">
         <element label="Model" max_length="32" name="model" reference="cmdb_hardware_product_model" type="reference"/>
+        <element label="Approval By" max_length="32" name="approval_by" type="string"/>
         <element label="Stock Number" max_length="40" name="stock_number" type="integer"/>
         <element label="Approval History" max_length="40" name="approval_history" type="string"/>
         <element label="Approval" max_length="40" name="approval" type="string"/>
         <index name="index">
+            <element name="approval_by"/>
+        </index>
+        <index name="index2">
             <element name="model"/>
         </index>
     </element>

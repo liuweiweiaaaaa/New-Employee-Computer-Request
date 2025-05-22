@@ -36,20 +36,21 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p>${mail_script:cc_and_bcc_set}</p>
-<p>Dear Manager Manager ${manager_email.name},</p>
-<p>Your employee : ${employee_name} has successfully joined the company.</p>
+        <message_html><![CDATA[<p>Dear Manager,</p>
+<p>Your employee ${employee_name} has successfully joined the company.</p>
 <p>Congratulations!</p>
-<p>Best Wishes</p>]]></message_html>
+<p>Best Wishes</p>
+<p>&nbsp;</p>
+<p>${mail_script:cc_and_bcc_set}</p>]]></message_html>
         <message_list/>
         <message_text/>
         <name>Onboard Complete Email</name>
-        <omit_watermark>false</omit_watermark>
+        <omit_watermark>true</omit_watermark>
         <order>100</order>
         <push_message_only>false</push_message_only>
         <recipient_fields/>
         <recipient_groups/>
-        <recipient_users>c0ff22c7832166100353f7b6feaad3bd</recipient_users>
+        <recipient_users>fd03d28383ad26100353f7b6feaad399</recipient_users>
         <reply_to/>
         <send_self>true</send_self>
         <sms_alternate/>
@@ -62,7 +63,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>60deacb683a1e2100353f7b6feaad39a</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>Onboard Complete Email</sys_name>
         <sys_overrides/>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
@@ -70,9 +71,9 @@
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
         <sys_update_name>sysevent_email_action_60deacb683a1e2100353f7b6feaad39a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-21 07:07:35</sys_updated_on>
+        <sys_updated_on>2025-05-22 12:17:45</sys_updated_on>
         <sys_version>2</sys_version>
-        <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
+        <template/>
         <type>email</type>
         <weight>0</weight>
     </sysevent_email_action>
