@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog">
+    <sc_cat_item_catalog action="DELETE">
+        <sc_cat_item display_value="Onboard Completion2">ef32a98183f122100353f7b6feaad324</sc_cat_item>
+        <sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog>
+        <sys_class_name>sc_cat_item_catalog</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-27 06:25:09</sys_created_on>
+        <sys_id>b2b225c183f122100353f7b6feaad394</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Catalog.Onboard Completion2</sys_name>
+        <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
+        <sys_update_name>sc_cat_item_catalog_b2b225c183f122100353f7b6feaad394</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-27 06:25:09</sys_updated_on>
+    </sc_cat_item_catalog>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</application>
+        <file_path/>
+        <instance_id>20e4f0f51b9ac61078c7cb7b234bcb8a</instance_id>
+        <instance_name>dev271709</instance_name>
+        <name>sc_cat_item_catalog_b2b225c183f122100353f7b6feaad394</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog"><sc_cat_item_catalog action="INSERT_OR_UPDATE"><sc_cat_item display_value="Onboard Completion2">ef32a98183f122100353f7b6feaad324</sc_cat_item><sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog><sys_class_name>sc_cat_item_catalog</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-27 06:25:09</sys_created_on><sys_id>b2b225c183f122100353f7b6feaad394</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Service Catalog.Onboard Completion2</sys_name><sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package><sys_policy/><sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope><sys_update_name>sc_cat_item_catalog_b2b225c183f122100353f7b6feaad394</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-27 06:25:09</sys_updated_on></sc_cat_item_catalog></record_update>]]></payload>
+        <payload_hash>125372740</payload_hash>
+        <record_name>Service Catalog.Onboard Completion2</record_name>
+        <reverted_from/>
+        <source>5fcca34983a5e2100353f7b6feaad316</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-27 06:25:09</sys_created_on>
+        <sys_id>bab225c183f122100353f7b6feaad398</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197106a937a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-27 06:25:09</sys_updated_on>
+        <type>Catalog Items Catalog</type>
+        <update_guid>fab225c190f122106e9bf2a336d1b497</update_guid>
+        <update_guid_history>fab225c190f122106e9bf2a336d1b497:125372740</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Service Catalog.Onboard Completion2">30c265c183f122100353f7b6feaad38d</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-27 06:25:17</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_catalog">sc_cat_item_catalog</sys_db_object>
+        <sys_id>33970d84ebc04e5a8e64347db2997e84</sys_id>
+        <sys_metadata>b2b225c183f122100353f7b6feaad394</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Catalog.Onboard Completion2</sys_name>
+        <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
+        <sys_parent display_value="Onboard Completion2">ef32a98183f122100353f7b6feaad324</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
+        <sys_scope_delete display_value="">3da91bf3bb5b44baa3f2bfec9981dfd9</sys_scope_delete>
+        <sys_update_name>sc_cat_item_catalog_b2b225c183f122100353f7b6feaad394</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_catalog_b2b225c183f122100353f7b6feaad394">bab225c183f122100353f7b6feaad398</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-27 06:25:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
