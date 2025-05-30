@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1755713_new_em_0.FieldUpdater</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>FieldUpdater</name>
+        <sandbox_callable>true</sandbox_callable>
+        <script><![CDATA[var FieldUpdater = Class.create();
+FieldUpdater.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    updateField: function() {
+        var recordId = this.getParameter('sys_id');
+        var fieldName = this.getParameter('sysparm_field_name');
+        var newValue = this.getParameter('sysparm_new_value');
+        // 更新记录
+        var gr = new GlideRecord('x_1755713_new_em_0_employee_info');
+        gr.addQuery('sn_number', 'SN000001');
+        gr.query();
+        if (gr.next()) {
+            //gr.fieldName = newValue;
+            gr.setValue(fieldName, newValue);
+            gr.update();
+            return 'success';
+        } else {
+            return '记录未找到';
+        }
+
+    },
+
+    type: 'FieldUpdater'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-28 07:08:29</sys_created_on>
+        <sys_id>f716b21583f522100353f7b6feaad3c1</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>FieldUpdater</sys_name>
+        <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
+        <sys_update_name>sys_script_include_f716b21583f522100353f7b6feaad3c1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 01:10:31</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>f716b21583f522100353f7b6feaad3c1</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-28 07:08:29</sys_created_on>
+        <sys_id>0736361583f522100353f7b6feaad3c4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-28 07:08:29</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
