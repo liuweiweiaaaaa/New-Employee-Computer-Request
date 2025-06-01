@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="wf_workflow_version">
+    <wf_workflow_version action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <activity_stages>{"stages":{},"subflows":[],"activities":{},"ends":["c0c2b10e837922100353f7b6feaad3cd"]}</activity_stages>
+        <after_business_rules>false</after_business_rules>
+        <checked_out/>
+        <checked_out_by/>
+        <column_renderer display_value="Workflow-driven">a56213111b030100adca1e094f0713ac</column_renderer>
+        <condition/>
+        <condition_type/>
+        <description/>
+        <expected_sequences>8cc2b10e837922100353f7b6feaad3ca,c0c2b10e837922100353f7b6feaad3cd</expected_sequences>
+        <expected_time>1970-01-01 14:00:00</expected_time>
+        <expected_time_type/>
+        <full_sequences>8cc2b10e837922100353f7b6feaad3ca,c0c2b10e837922100353f7b6feaad3cd</full_sequences>
+        <journal/>
+        <max_activity_count>100</max_activity_count>
+        <name>test</name>
+        <not_cacheable>false</not_cacheable>
+        <on_cancel><![CDATA[// This script executes if the workflow is cancelled.// The global variable context_sys_id contains the sys_id of the cancelled workflow context.]]></on_cancel>
+        <order>100</order>
+        <pin_type>set_by_activity</pin_type>
+        <published>true</published>
+        <relative_duration/>
+        <requires_ert>true</requires_ert>
+        <run_multiple>false</run_multiple>
+        <schedule/>
+        <stage_field/>
+        <stage_order>computed</stage_order>
+        <start display_value="Begin">8cc2b10e837922100353f7b6feaad3ca</start>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 10:09:04</sys_created_on>
+        <sys_id>98a2fd4a837922100353f7b6feaad390</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 10:14:23</sys_updated_on>
+        <table>sys_attachment</table>
+        <timezone/>
+        <validated>false</validated>
+        <workflow display_value="test">08c2b10e837922100353f7b6feaad3c9</workflow>
+    </wf_workflow_version>
+    <wf_workflow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <description/>
+        <name>test</name>
+        <preview/>
+        <sys_class_name>wf_workflow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 10:09:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>08c2b10e837922100353f7b6feaad3c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>test</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
+        <sys_update_name>wf_workflow_08c2b10e837922100353f7b6feaad3c9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 10:09:04</sys_updated_on>
+        <table>sys_attachment</table>
+        <template>false</template>
+        <vars/>
+    </wf_workflow>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Begin">c7a5e32c0a0a0b3a002377c24ed8ea76</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>1</databus_lookup_id>
+        <height/>
+        <input/>
+        <is_parent>false</is_parent>
+        <name>Begin</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 10:09:04</sys_created_on>
+        <sys_id>8cc2b10e837922100353f7b6feaad3ca</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 10:09:04</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width>80</width>
+        <workflow_version display_value="test">98a2fd4a837922100353f7b6feaad390</workflow_version>
+        <x>20</x>
+        <y>20</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=8cc2b10e837922100353f7b6feaad3ca"/>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Begin">8cc2b10e837922100353f7b6feaad3ca</activity>
+        <condition>true</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>true</is_positive>
+        <name>Always</name>
+        <order>0</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 10:09:04</sys_created_on>
+        <sys_id>04c2b10e837922100353f7b6feaad3cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 10:09:04</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="End">c7a66f7d0a0a0b3a004544a6d2f14076</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>2</databus_lookup_id>
+        <height/>
+        <input/>
+        <is_parent>false</is_parent>
+        <name>End</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 10:09:04</sys_created_on>
+        <sys_id>c0c2b10e837922100353f7b6feaad3cd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 10:09:04</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width>80</width>
+        <workflow_version display_value="test">98a2fd4a837922100353f7b6feaad390</workflow_version>
+        <x>400</x>
+        <y>150</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=c0c2b10e837922100353f7b6feaad3cd"/>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Run Script">db8c65aec0a8016501d00259bc7203a4</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>3</databus_lookup_id>
+        <height/>
+        <input>{}</input>
+        <is_parent>false</is_parent>
+        <name>test</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 10:11:32</sys_created_on>
+        <sys_id>0bf27d0e837922100353f7b6feaad33c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 10:11:34</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="test">98a2fd4a837922100353f7b6feaad390</workflow_version>
+        <x>340</x>
+        <y>72</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=0bf27d0e837922100353f7b6feaad33c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>0bf27d0e837922100353f7b6feaad33c</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 10:11:32</sys_created_on>
+        <sys_id>4053790e837922100353f7b6feaad34d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 10:11:32</sys_updated_on>
+        <value>&#13;
+&#13;
+var attach = new GlideRecord('sys_attachment');&#13;
+attach.addQuery('table_sys_id', current.sys_id);&#13;
+attach.query();&#13;
+if (attach.next()) {&#13;
+    log("Found attachment for record: " + attach.file_name);&#13;
+} else {&#13;
+    log("No attachment found, throwing error");&#13;
+    throw ("No attachment found!");&#13;
+}&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+var dataSource = new GlideRecord(dataSourceTable);&#13;
+dataSource.name = "mikeski.net-excel-mvrs-" + current.sys_id;&#13;
+dataSource.type = "File";&#13;
+dataSource.format = "Excel";&#13;
+dataSource.file_retrieval_method = "Attachment";&#13;
+dataSource.import_set_table_name = importSetTableName;&#13;
+dataSource.header_row = 1;&#13;
+dataSource.sheet_number = 1;&#13;
+dataSource.sys_package.setDisplayValue(applicationScope);&#13;
+dataSource.sys_scope.setDisplayValue(applicationScope);&#13;
+var dataSourceId = dataSource.insert();&#13;
+log("Data source created: " + dataSourceId);&#13;
+&#13;
+&#13;
+&#13;
+log("Copying attachment from current table: " + current.getTableName() + "." + current.sys_id + " to data source");&#13;
+new GlideSysAttachment().copy(current.getTableName(), current.sys_id, dataSourceTable, dataSourceId);&#13;
+log("Done copying attachment, data source is now setup");&#13;
+&#13;
+&#13;
+&#13;
+log("Importing data from data source into import set");&#13;
+var loader = new GlideImportSetLoader();&#13;
+var importSetRec = loader.getImportSetGr(dataSource);&#13;
+var ranload = loader.loadImportSetTable(importSetRec, dataSource);&#13;
+importSetRec.state = "loaded";&#13;
+importSetRec.update();&#13;
+log("Loaded records into import set number: " + importSetRec.number + " and sys id " + importSetRec.sys_id);&#13;
+&#13;
+&#13;
+&#13;
+log("Getting rows from import set we just loaded - creating array of rows for MVRS");&#13;
+var mvrsArray = [];&#13;
+&#13;
+var importSetRow = new GlideRecord(importSetTableName);&#13;
+importSetRow.addQuery("sys_import_set", importSetRec.sys_id);&#13;
+importSetRow.query();&#13;
+while(importSetRow.next()){&#13;
+	log("Got row from import set, creating object for MVRS row and adding it to MVRS array");&#13;
+	var mvrsValue = {&#13;
+		first_value: importSetRow.u_first.getValue(),&#13;
+		second_value: importSetRow.u_second.getValue()&#13;
+	};&#13;
+	mvrsArray.push(mvrsValue);&#13;
+}&#13;
+&#13;
+&#13;
+&#13;
+log("Got all rows, now setting the MVRS variable value on the SC item");&#13;
+current.variables.mikeski_net_demo_2_field_mvrs = JSON.stringify(mvrsArray);</value>
+        <variable display_value="Script">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>0bf27d0e837922100353f7b6feaad33c</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 10:11:32</sys_created_on>
+        <sys_id>4053790e837922100353f7b6feaad34d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 10:11:32</sys_updated_on>
+        <value>&#13;
+&#13;
+var attach = new GlideRecord('sys_attachment');&#13;
+attach.addQuery('table_sys_id', current.sys_id);&#13;
+attach.query();&#13;
+if (attach.next()) {&#13;
+    log("Found attachment for record: " + attach.file_name);&#13;
+} else {&#13;
+    log("No attachment found, throwing error");&#13;
+    throw ("No attachment found!");&#13;
+}&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+var dataSource = new GlideRecord(dataSourceTable);&#13;
+dataSource.name = "mikeski.net-excel-mvrs-" + current.sys_id;&#13;
+dataSource.type = "File";&#13;
+dataSource.format = "Excel";&#13;
+dataSource.file_retrieval_method = "Attachment";&#13;
+dataSource.import_set_table_name = importSetTableName;&#13;
+dataSource.header_row = 1;&#13;
+dataSource.sheet_number = 1;&#13;
+dataSource.sys_package.setDisplayValue(applicationScope);&#13;
+dataSource.sys_scope.setDisplayValue(applicationScope);&#13;
+var dataSourceId = dataSource.insert();&#13;
+log("Data source created: " + dataSourceId);&#13;
+&#13;
+&#13;
+&#13;
+log("Copying attachment from current table: " + current.getTableName() + "." + current.sys_id + " to data source");&#13;
+new GlideSysAttachment().copy(current.getTableName(), current.sys_id, dataSourceTable, dataSourceId);&#13;
+log("Done copying attachment, data source is now setup");&#13;
+&#13;
+&#13;
+&#13;
+log("Importing data from data source into import set");&#13;
+var loader = new GlideImportSetLoader();&#13;
+var importSetRec = loader.getImportSetGr(dataSource);&#13;
+var ranload = loader.loadImportSetTable(importSetRec, dataSource);&#13;
+importSetRec.state = "loaded";&#13;
+importSetRec.update();&#13;
+log("Loaded records into import set number: " + importSetRec.number + " and sys id " + importSetRec.sys_id);&#13;
+&#13;
+&#13;
+&#13;
+log("Getting rows from import set we just loaded - creating array of rows for MVRS");&#13;
+var mvrsArray = [];&#13;
+&#13;
+var importSetRow = new GlideRecord(importSetTableName);&#13;
+importSetRow.addQuery("sys_import_set", importSetRec.sys_id);&#13;
+importSetRow.query();&#13;
+while(importSetRow.next()){&#13;
+	log("Got row from import set, creating object for MVRS row and adding it to MVRS array");&#13;
+	var mvrsValue = {&#13;
+		first_value: importSetRow.u_first.getValue(),&#13;
+		second_value: importSetRow.u_second.getValue()&#13;
+	};&#13;
+	mvrsArray.push(mvrsValue);&#13;
+}&#13;
+&#13;
+&#13;
+&#13;
+log("Got all rows, now setting the MVRS variable value on the SC item");&#13;
+current.variables.mikeski_net_demo_2_field_mvrs = JSON.stringify(mvrsArray);</value>
+        <variable display_value="Script">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="test">0bf27d0e837922100353f7b6feaad33c</activity>
+        <condition>true</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>true</is_positive>
+        <name>Always</name>
+        <order>0</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 10:11:32</sys_created_on>
+        <sys_id>c053790e837922100353f7b6feaad34e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 10:11:32</sys_updated_on>
+    </wf_condition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Always">04c2b10e837922100353f7b6feaad3cc</condition>
+        <from display_value="Begin">8cc2b10e837922100353f7b6feaad3ca</from>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 10:09:04</sys_created_on>
+        <sys_id>4cc2b10e837922100353f7b6feaad3cd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 10:09:04</sys_updated_on>
+        <to display_value="End">c0c2b10e837922100353f7b6feaad3cd</to>
+    </wf_transition>
+    <wf_estimated_runtime_config action="INSERT_OR_UPDATE">
+        <estimated_run_time/>
+        <no_of_data_points>1</no_of_data_points>
+        <percentage_threshold_ert>20</percentage_threshold_ert>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 10:09:04</sys_created_on>
+        <sys_id>c8c2b10e837922100353f7b6feaad3c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 10:09:04</sys_updated_on>
+        <workflow_version display_value="test">98a2fd4a837922100353f7b6feaad390</workflow_version>
+    </wf_estimated_runtime_config>
+    <wf_workflow_version action="update_multiple" query="workflow=08c2b10e837922100353f7b6feaad3c9^sys_id!=98a2fd4a837922100353f7b6feaad390">
+        <published>false</published>
+    </wf_workflow_version>
+</record_update>

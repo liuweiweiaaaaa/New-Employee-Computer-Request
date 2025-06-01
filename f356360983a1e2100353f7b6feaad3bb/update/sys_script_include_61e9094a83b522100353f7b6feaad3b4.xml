@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1755713_new_em_0.ExcelParserAjax</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>ExcelParserAjax</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var ExcelParserAjax = Class.create();
+ExcelParserAjax.prototype = {
+  processExcel: function() {
+    var fileId = this.getParameter('sysparm_attachment_sys_id');
+    var requestItemId = this.getParameter('sysparm_request_item');
+    
+    if (!fileId || !requestItemId) {
+      return JSON.stringify({ success: false, error: '缺少必要参数' });
+    }
+    
+    try {
+      var attachment = new GlideSysAttachment();
+      var fileStream = attachment.getContent(fileId);
+      var workbook = this._parseExcel(fileStream);
+      var data = this._extractData(workbook);
+      this._populateMRVS(requestItemId, data);
+      return JSON.stringify({ success: true });
+    } catch (e) {
+      gs.error('Excel 处理失败: ' + e);
+      return JSON.stringify({ success: false, error: e.message });
+    }
+  },
+  
+  processAttachment: function() {
+    var requestItemId = this.getParameter('sysparm_request_item');
+    var fileName = this.getParameter('sysparm_file_name');
+    
+    if (!requestItemId || !fileName) {
+      return JSON.stringify({ success: false, error: '缺少必要参数' });
+    }
+    
+    try {
+      var attachmentGR = new GlideRecord('sys_attachment');
+      attachmentGR.addQuery('table_sys_id', requestItemId);
+      attachmentGR.addQuery('file_name', fileName);
+      attachmentGR.query();
+      
+      if (!attachmentGR.next()) {
+        return JSON.stringify({ success: false, error: '未找到附件' });
+      }
+      
+      var fileId = attachmentGR.sys_id;
+      var attachment = new GlideSysAttachment();
+      var fileStream = attachment.getContent(fileId);
+      var workbook = this._parseExcel(fileStream);
+      var data = this._extractData(workbook);
+      this._populateMRVS(requestItemId, data);
+      return JSON.stringify({ success: true });
+    } catch (e) {
+      gs.error('Excel 处理失败: ' + e);
+      return JSON.stringify({ success: false, error: e.message });
+    }
+  },
+  
+  // 解析 Excel 文件内容
+  _parseExcel: function(fileStream) {
+    // 方法 1: 使用第三方库 (推荐)
+    // 注：ServiceNow 不支持直接导入 JavaScript 库，需要通过其他方式实现
+    
+    // 方法 2: 使用 GlideSystem 类 (基础版)
+    var content = new GlideStringUtil().toString(fileStream);
+    var workbook = {
+      worksheets: [
+        {
+          rows: this._parseCSV(content)
+        }
+      ]
+    };
+    return workbook;
+  },
+  
+  // 解析 CSV 格式 (简化版 Excel 解析)
+  _parseCSV: function(csvContent) {
+    var rows = csvContent.split('\n');
+    var parsedRows = [];
+    
+    for (var i = 0; i < rows.length; i++) {
+      var cells = rows[i].split(',');
+      var parsedCells = [];
+      
+      for (var j = 0; j < cells.length; j++) {
+        parsedCells.push({
+          value: cells[j].trim()
+        });
+      }
+      
+      parsedRows.push({
+        cells: parsedCells
+      });
+    }
+    
+    return parsedRows;
+  },
+  
+  // 从 Excel 提取数据
+  _extractData: function(workbook) {
+    var sheet = workbook.worksheets[0];
+    var data = [];
+    
+    // 假设第一行是表头
+    var headers = [];
+    if (sheet.rows.length > 0) {
+      var headerRow = sheet.rows[0];
+      for (var i = 0; i < headerRow.cells.length; i++) {
+        headers.push(headerRow.cells[i].value);
+      }
+    }
+    
+    // 从第二行开始提取数据
+    for (var i = 1; i < sheet.rows.length; i++) {
+      var row = sheet.rows[i];
+      var rowData = {};
+      
+      for (var j = 0; j < headers.length && j < row.cells.length; j++) {
+        rowData[headers[j]] = row.cells[j].value;
+      }
+      
+      data.push(rowData);
+    }
+    
+    return data;
+  },
+  
+  // 填充 MRVS
+  _populateMRVS: function(requestItemId, data) {
+    // 获取 MRVS 关联的 sc_item_option_mtom 记录
+    var gr = new GlideRecord('sc_item_option_mtom');
+    gr.addQuery('request_item', requestItemId);
+    gr.addQuery('sc_item_option.item_option_new.name', 'Excel Upload MRVS'); // 替换为你的 MRVS 名称
+    gr.query();
+    
+    if (gr.next()) {
+      var m2mId = gr.sys_id;
+      
+      // 清空现有数据
+      var grData = new GlideRecord('sc_item_option');
+      grData.addQuery('sc_item_option_mtom', m2mId);
+      grData.deleteMultiple();
+      
+      // 添加新数据
+      for (var i = 0; i < data.length; i++) {
+        var newRow = new GlideRecord('sc_item_option');
+        newRow.sc_item_option_mtom = m2mId;
+        newRow.name = 'Excel Upload MRVS'; // 替换为你的 MRVS 名称
+        newRow.value = JSON.stringify(data[i]);
+        newRow.insert();
+      }
+    }
+  },
+  
+  type: 'ExcelParserAjax'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 07:10:56</sys_created_on>
+        <sys_id>61e9094a83b522100353f7b6feaad3b4</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>ExcelParserAjax</sys_name>
+        <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
+        <sys_update_name>sys_script_include_61e9094a83b522100353f7b6feaad3b4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 08:42:24</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>61e9094a83b522100353f7b6feaad3b4</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 07:10:55</sys_created_on>
+        <sys_id>56f9894a83b522100353f7b6feaad356</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 07:10:55</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

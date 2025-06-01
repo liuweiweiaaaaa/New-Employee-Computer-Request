@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_macro">
+    <sys_ui_macro action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <description/>
+        <media_type/>
+        <name>Upload Data</name>
+        <scoped_name>x_1755713_new_em_0_Upload Data</scoped_name>
+        <sys_class_name>sys_ui_macro</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 07:32:29</sys_created_on>
+        <sys_id>de0d094e83b522100353f7b6feaad3d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Upload Data</sys_name>
+        <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
+        <sys_update_name>sys_ui_macro_de0d094e83b522100353f7b6feaad3d4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 07:32:29</sys_updated_on>
+        <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<input type="button" onclick="applyVariables()" value="Apply Data"/>
+	
+	<script>
+		
+function applyVariables(reference) {
+	var cartID = g_form.getParameter("sysparm_item_guid");
+	var ga = new GlideAjax('ExcelParserAjax');
+	ga.addParam('sysparm_name','getCSVData');
+	ga.addParam('sysparm_cart_id', cartID);
+	ga.getXML(processResponse);
+	}
+
+function processResponse(response){
+	var answer = response.responseXML.documentElement.getAttribute("answer");
+	alert(answer);
+	g_form.setValue('firewall_changes',answer);
+	}
+		
+	</script>
+</j:jelly>]]></xml>
+    </sys_ui_macro>
+</record_update>

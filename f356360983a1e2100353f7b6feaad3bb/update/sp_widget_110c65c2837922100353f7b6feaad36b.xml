@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  return {
+    api: {
+      uploadFile: function(file) {
+        var c = this;
+        c.error = '';
+        c.success = '';
+        
+        if (!file) {
+          c.error = "Please select a file";
+          return;
+        }
+        
+        // Validate file type
+        if (!(file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' || 
+              file.type === 'application/vnd.ms-excel')) {
+          c.error = "Only Excel files are allowed (.xlsx, .xls)";
+          return;
+        }
+        
+        // Read the file
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          try {
+            var data = new Uint8Array(e.target.result);
+            var workbook = XLSX.read(data, {type: 'array'});
+            
+            // Get first sheet
+            var firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+            
+            // Convert to JSON
+            var jsonData = XLSX.utils.sheet_to_json(firstSheet, {header: 1});
+            
+            if (jsonData.length < 2) {
+              c.error = "Excel file must have at least one row of data";
+              return;
+            }
+            
+            // Get headers (first row)
+            var headers = jsonData[0];
+            
+            // Process data rows
+            var mrvsData = [];
+            for (var i = 1; i < jsonData.length; i++) {
+              var row = jsonData[i];
+              if (row.length === 0) continue;
+              
+              var rowObj = {};
+              for (var j = 0; j < headers.length; j++) {
+                rowObj[headers[j]] = row[j] || '';
+              }
+              mrvsData.push(rowObj);
+            }
+            
+            // Populate MRVS
+            c.populateMRVS(headers, mrvsData);
+            c.success = "Successfully imported " + mrvsData.length + " rows from Excel";
+            
+          } catch (err) {
+            c.error = "Error processing Excel file: " + err.message;
+            console.error(err);
+          }
+          c.server.update();
+        };
+        reader.readAsArrayBuffer(file);
+      },
+      
+      populateMRVS: function(headers, data) {
+        var c = this;
+        var mrvsElement = $('div.variable-editor-mrvs[data-id="' + c.options.mrvsVariable + '"]');
+        
+        if (!mrvsElement.length) {
+          c.error = "Could not find MRVS with variable name: " + c.options.mrvsVariable;
+          return;
+        }
+        
+        // Clear existing rows (optional)
+        // mrvsElement.find('button.delete-row').click();
+        
+        // Add new rows
+        data.forEach(function(rowData) {
+          // Click add row button
+          mrvsElement.find('button.add-row').click();
+          
+          // Get the newly added row (last one)
+          var rows = mrvsElement.find('div.list-editor-row');
+          var newRow = rows.last();
+          
+          // Populate fields
+          headers.forEach(function(header) {
+            var field = newRow.find('[data-id="' + header + '"] input, [data-id="' + header + '"] textarea, [data-id="' + header + '"] select');
+            if (field.length) {
+              field.val(rowData[header]).trigger('change');
+            }
+          });
+        });
+      }
+    }
+  };
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.excel-upload-container {
+  padding: 15px;
+  border: 1px dashed #ccc;
+  margin-bottom: 15px;
+  text-align: center;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>upload_widgert</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Upload Widgert</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  if (!input) return; // For client-side use only
+  
+  // Set option schema programmatically
+  data.optionSchema = [
+    {
+      "name": "mrvsVariable",
+      "label": "Multi Row Variable Set",
+      "type": "string"
+    }
+  ];
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 09:39:40</sys_created_on>
+        <sys_id>110c65c2837922100353f7b6feaad36b</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Upload Widgert</sys_name>
+        <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
+        <sys_update_name>sp_widget_110c65c2837922100353f7b6feaad36b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-01 02:36:29</sys_updated_on>
+        <template><![CDATA[<div class="excel-upload-container">
+  <label class="btn btn-default">
+    <span>Upload Excel File</span>
+    <input type="file" 
+           accept=".xlsx,.xls" 
+           style="display: none;" 
+           ng-model="c.file" 
+           ngf-select="c.uploadFile($file)" 
+           ngf-accept="'.xlsx,.xls'">
+  </label>
+  
+  <div ng-if="c.error" class="alert alert-danger" style="margin-top: 10px;">
+    {{c.error}}
+  </div>
+  
+  <div ng-if="c.success" class="alert alert-success" style="margin-top: 10px;">
+    {{c.success}}
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

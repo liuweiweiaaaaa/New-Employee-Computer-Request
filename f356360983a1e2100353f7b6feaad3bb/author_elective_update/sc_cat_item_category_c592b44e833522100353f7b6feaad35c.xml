@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="DELETE">
+        <sc_cat_item display_value="Show Upload File">8af034ca833522100353f7b6feaad365</sc_cat_item>
+        <sc_category display_value="Services">109f0438c6112276003ae8ac13e7009d</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 05:28:59</sys_created_on>
+        <sys_id>c592b44e833522100353f7b6feaad35c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Services.Show Upload File</sys_name>
+        <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
+        <sys_update_name>sc_cat_item_category_c592b44e833522100353f7b6feaad35c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 05:28:59</sys_updated_on>
+    </sc_cat_item_category>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</application>
+        <file_path/>
+        <instance_id>20e4f0f51b9ac61078c7cb7b234bcb8a</instance_id>
+        <instance_name>dev271709</instance_name>
+        <name>sc_cat_item_category_c592b44e833522100353f7b6feaad35c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category"><sc_cat_item_category action="INSERT_OR_UPDATE"><sc_cat_item display_value="Show Upload File">8af034ca833522100353f7b6feaad365</sc_cat_item><sc_category display_value="Services">109f0438c6112276003ae8ac13e7009d</sc_category><sys_class_name>sc_cat_item_category</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-05-30 05:28:59</sys_created_on><sys_id>c592b44e833522100353f7b6feaad35c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Services.Show Upload File</sys_name><sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package><sys_policy/><sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope><sys_update_name>sc_cat_item_category_c592b44e833522100353f7b6feaad35c</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-05-30 05:28:59</sys_updated_on></sc_cat_item_category></record_update>]]></payload>
+        <payload_hash>-651313582</payload_hash>
+        <record_name>Services.Show Upload File</record_name>
+        <reverted_from/>
+        <source>5fcca34983a5e2100353f7b6feaad316</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 05:28:59</sys_created_on>
+        <sys_id>d9a2f44e833522100353f7b6feaad390</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1971faa3cd00000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 05:28:59</sys_updated_on>
+        <type>Catalog Item Category</type>
+        <update_guid>dda2f44ede352210518f3d6583afdd8f</update_guid>
+        <update_guid_history>dda2f44ede352210518f3d6583afdd8f:-651313582</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Services.Show Upload File">bbc2784e833522100353f7b6feaad36d</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 05:29:42</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_category">sc_cat_item_category</sys_db_object>
+        <sys_id>07a3b9edaf0645ac80669bb49e2a7584</sys_id>
+        <sys_metadata>c592b44e833522100353f7b6feaad35c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Services.Show Upload File</sys_name>
+        <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
+        <sys_scope_delete display_value="">3da91bf3bb5b44baa3f2bfec9981dfd9</sys_scope_delete>
+        <sys_update_name>sc_cat_item_category_c592b44e833522100353f7b6feaad35c</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_category_c592b44e833522100353f7b6feaad35c">d9a2f44e833522100353f7b6feaad390</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 05:29:42</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
