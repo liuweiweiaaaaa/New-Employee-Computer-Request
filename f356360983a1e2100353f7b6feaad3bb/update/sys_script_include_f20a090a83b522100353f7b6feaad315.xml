@@ -2,75 +2,55 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>true</active>
-        <api_name>x_1755713_new_em_0.ExcelParser </api_name>
+        <api_name>x_1755713_new_em_0.ExcelToMRVSProcessor</api_name>
         <caller_access/>
-        <client_callable>false</client_callable>
+        <client_callable>true</client_callable>
         <description/>
         <mobile_callable>false</mobile_callable>
-        <name>ExcelParser </name>
+        <name>ExcelToMRVSProcessor</name>
         <sandbox_callable>false</sandbox_callable>
-        <script><![CDATA[var ExcelParser = Class.create();
-ExcelParser.prototype = {
-    initialize: function() {
-        this.POLL_INTERVAL = 200;
-        this.MAX_WAIT = 10000;
-    },
-    
-    parse: function(bytes) {
-        try {
-            // 将附件保存为临时文件
-            var tempFile = new SNC.File('temp_excel.xlsx');
-            tempFile.setContentType('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-            tempFile.write(bytes);
-            
-            // 使用Excel API解析
-            var excel = new SNC.ExcelImporter();
-            excel.setInputFile(tempFile);
-            excel.setSheetName('Sheet1'); // 或从参数获取
-            excel.parse();
-            
-            // 获取数据
-            var data = [];
-            var headers = this._getHeaders(excel);
-            var rowCount = excel.getRowCount();
-            
-            for (var i = 1; i < rowCount; i++) { // 跳过标题行
-                var row = {};
-                for (var h = 0; h < headers.length; h++) {
-                    row[headers[h]] = excel.getCellValue(i, h);
-                }
-                data.push(row);
+        <script><![CDATA[var ExcelToMRVSProcessor = Class.create();
+ExcelToMRVSProcessor.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    addExceldatainMRVS: function() {
+        function getUserSysid(getName) {
+            var grU = new GlideRecord("sys_user");
+            grU.addQuery("name", getName);
+            grU.query();
+            if (grU.next()) {
+                return grU.getUniqueValue();
             }
-            
-            return data;
-        } finally {
-            if (tempFile) tempFile.deleteFile();
         }
-    },
-    
-    _getHeaders: function(excel) {
-        var headers = [];
-        var colCount = excel.getColumnCount();
-        for (var i = 0; i < colCount; i++) {
-            headers.push(excel.getCellValue(0, i)); // 假设第一行是标题
+        var mrvsObj = [];
+        var attachment = new GlideSysAttachment();
+        var attachmentStream = attachment.getContentStream(this.getParameter("sysparm_existing"));
+        var parser = new sn_impex.GlideExcelParser();
+        parser.parse(attachmentStream);
+        while (parser.next()) {
+            mrvsObj.push(parser.getRow());
         }
-        return headers;
+        var mrvsObjStr = JSON.stringify(mrvsObj);
+        var getV = JSON.parse(mrvsObjStr);
+        for (var i = 0; i < getV.length; i++) {
+            //             gs.info("Length is:" + getV.length);
+            //             gs.info("Name is:" + getV[i].user_name);
+            //getV[i].user_name = getUserSysid(getV[i].user_name); //calling into function to get the user sys_id
+        }
+        return JSON.stringify(getV); //returning into client side
     },
-    
-    type: 'ExcelParser'
-};]]></script>
+    type: 'ExcelToMRVSProcessor'
+});]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-05-30 07:11:32</sys_created_on>
         <sys_id>f20a090a83b522100353f7b6feaad315</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>ExcelParser </sys_name>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>ExcelToMRVSProcessor</sys_name>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
         <sys_update_name>sys_script_include_f20a090a83b522100353f7b6feaad315</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-30 07:11:32</sys_updated_on>
+        <sys_updated_on>2025-06-02 05:41:46</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>f20a090a83b522100353f7b6feaad315</id>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="catalog_script_client">
+    <catalog_script_client action="DELETE">
+        <active>true</active>
+        <applies_catalog>true</applies_catalog>
+        <applies_extended>false</applies_extended>
+        <applies_req_item>false</applies_req_item>
+        <applies_sc_task>false</applies_sc_task>
+        <applies_target_record>false</applies_target_record>
+        <applies_to>item</applies_to>
+        <cat_item display_value="Show Upload File">8af034ca833522100353f7b6feaad365</cat_item>
+        <cat_variable/>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Excel Upload Handler</name>
+        <order/>
+        <published_ref/>
+        <script><![CDATA[function onLoad() {
+    // // 确保字段可见
+    // g_form.setDisplay('upload_attachment', true);
+    
+    // // 使用 UI 策略监听变化
+    // if (g_form.hasField('upload_attachment')) {
+    //     // 旧版本兼容方式
+    //     g_form.getControl('upload_attachment').onchange = function() {
+    //         if (g_form.getValue('upload_attachment')) {
+    //             processExcelFile();
+    //         }
+    //     };
+    // }
+}
+
+function processExcelFile() {
+    try {
+        var attachmentSysId = g_form.getValue('upload_attachment');
+        if (!attachmentSysId) return;
+        
+        // 显示处理状态
+        g_form.showFieldMsg('正在处理 Excel 文件...', 'info');
+        g_form.setReadOnly('upload_attachment', true);
+        
+        // 使用 GlideAjax
+        var ga = new GlideAjax('ExcelToMRVSProcessor');
+        ga.addParam('sysparm_name', 'processExcel');
+        ga.addParam('sysparm_attachment_sys_id', attachmentSysId);
+        ga.addParam('sysparm_mrvs_var_name', 'multi_row_variable_set');
+        ga.addParam('sysparm_sys_id', g_form.getUniqueValue());
+        ga.getXML(function(response) {
+            g_form.setReadOnly('upload_attachment', false);
+            
+            var answer = response.responseXML.documentElement.getAttribute('answer');
+			console.log('```````````````````'+answer);
+            if (answer === 'success') {
+                g_form.showFieldMsg('Excel 处理成功', 'success');
+                g_form.refreshMRVS('multi_row_variable_set');
+            } else {
+                g_form.showFieldMsg('处理失败: ' + answer, 'error');
+                g_form.setValue('upload_attachment', '');
+            }
+        });
+    } catch (e) {
+        g_form.showFieldMsg('处理出错: ' + e.message, 'error');
+        g_form.setReadOnly('upload_attachment', false);
+    }
+}]]></script>
+        <sys_class_name>catalog_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 07:07:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4488418683b522100353f7b6feaad332</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>Excel Upload Handler</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
+        <sys_update_name>catalog_script_client_4488418683b522100353f7b6feaad332</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-02 04:12:46</sys_updated_on>
+        <table/>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <va_supported>false</va_supported>
+        <variable_set/>
+        <view/>
+    </catalog_script_client>
+    <sys_es_latest_script action="DELETE">
+        <id>4488418683b522100353f7b6feaad332</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 07:07:14</sys_created_on>
+        <sys_id>6029090a83b522100353f7b6feaad311</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 07:07:14</sys_updated_on>
+        <table>catalog_script_client</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</application>
+        <file_path/>
+        <instance_id>20e4f0f51b9ac61078c7cb7b234bcb8a</instance_id>
+        <instance_name>dev271709</instance_name>
+        <name>catalog_script_client_4488418683b522100353f7b6feaad332</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="catalog_script_client"&gt;&lt;catalog_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_catalog&gt;true&lt;/applies_catalog&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;applies_req_item&gt;false&lt;/applies_req_item&gt;&lt;applies_sc_task&gt;false&lt;/applies_sc_task&gt;&lt;applies_target_record&gt;false&lt;/applies_target_record&gt;&lt;applies_to&gt;item&lt;/applies_to&gt;&lt;cat_item display_value="Show Upload File"&gt;8af034ca833522100353f7b6feaad365&lt;/cat_item&gt;&lt;cat_variable/&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Excel Upload Handler&lt;/name&gt;&lt;order/&gt;&lt;published_ref/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+    // // 确保字段可见
+    // g_form.setDisplay('upload_attachment', true);
+    
+    // // 使用 UI 策略监听变化
+    // if (g_form.hasField('upload_attachment')) {
+    //     // 旧版本兼容方式
+    //     g_form.getControl('upload_attachment').onchange = function() {
+    //         if (g_form.getValue('upload_attachment')) {
+    //             processExcelFile();
+    //         }
+    //     };
+    // }
+}
+
+function processExcelFile() {
+    try {
+        var attachmentSysId = g_form.getValue('upload_attachment');
+        if (!attachmentSysId) return;
+        
+        // 显示处理状态
+        g_form.showFieldMsg('正在处理 Excel 文件...', 'info');
+        g_form.setReadOnly('upload_attachment', true);
+        
+        // 使用 GlideAjax
+        var ga = new GlideAjax('ExcelToMRVSProcessor');
+        ga.addParam('sysparm_name', 'processExcel');
+        ga.addParam('sysparm_attachment_sys_id', attachmentSysId);
+        ga.addParam('sysparm_mrvs_var_name', 'multi_row_variable_set');
+        ga.addParam('sysparm_sys_id', g_form.getUniqueValue());
+        ga.getXML(function(response) {
+            g_form.setReadOnly('upload_attachment', false);
+            
+            var answer = response.responseXML.documentElement.getAttribute('answer');
+			console.log('```````````````````'+answer);
+            if (answer === 'success') {
+                g_form.showFieldMsg('Excel 处理成功', 'success');
+                g_form.refreshMRVS('multi_row_variable_set');
+            } else {
+                g_form.showFieldMsg('处理失败: ' + answer, 'error');
+                g_form.setValue('upload_attachment', '');
+            }
+        });
+    } catch (e) {
+        g_form.showFieldMsg('处理出错: ' + e.message, 'error');
+        g_form.setReadOnly('upload_attachment', false);
+    }
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;catalog_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-05-30 07:07:15&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;4488418683b522100353f7b6feaad332&lt;/sys_id&gt;&lt;sys_mod_count&gt;17&lt;/sys_mod_count&gt;&lt;sys_name&gt;Excel Upload Handler&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0"&gt;f356360983a1e2100353f7b6feaad3bb&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="New Employee Computer Request"&gt;f356360983a1e2100353f7b6feaad3bb&lt;/sys_scope&gt;&lt;sys_update_name&gt;catalog_script_client_4488418683b522100353f7b6feaad332&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-06-02 04:12:46&lt;/sys_updated_on&gt;&lt;table/&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;va_supported&gt;false&lt;/va_supported&gt;&lt;variable_set/&gt;&lt;view/&gt;&lt;/catalog_script_client&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;4488418683b522100353f7b6feaad332&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-05-30 07:07:14&lt;/sys_created_on&gt;&lt;sys_id&gt;6029090a83b522100353f7b6feaad311&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-05-30 07:07:14&lt;/sys_updated_on&gt;&lt;table&gt;catalog_script_client&lt;/table&gt;&lt;use_es_latest&gt;false&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>60035</payload_hash>
+        <record_name>Excel Upload Handler</record_name>
+        <reverted_from/>
+        <source>5fcca34983a5e2100353f7b6feaad316</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-02 04:12:46</sys_created_on>
+        <sys_id>42fdb3be83b962100353f7b6feaad30d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1972ed787f50000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-02 04:12:46</sys_updated_on>
+        <type>Catalog Client Scripts</type>
+        <update_guid>46fdb3be3fb96210947c8ab84e8efe0c</update_guid>
+        <update_guid_history>46fdb3be3fb96210947c8ab84e8efe0c:60035,4125fbf298b96210b7fbc0d723366543:841244245,a2a233325eb96210aa89c5f00246623d:593980014,f9e1f3bed1796210d952850e4571bef8:-598773370,21f0bbbe287962105b4e071320a43842:604010102,6e603bfa30796210185407c4106de8df:935515565,cabf637e4a79621074c2703cae34aa72:-1332448684,2afdefbab0796210b92014e2a191d799:-388720995,b2182336a979621035383e01fd09d771:-873960750,e406e772ca796210d6366ea32853515b:1874955488,8435e7327379621066faf9835c500f94:-1617488199,cba32bbe7d396210091cb75a0bf009c7:998912607,bcf38d762e7d22107483979e18534f16:-757016432,14fbd502d4392210d67f8ef5de729307:-1332421262,d60b55ced3f5221057f13d7082c67f44:2082173413,997bc5ca83b5221045bdaeb164afedd9:2050123255,baba498a7fb52210a5b97aec84663ac0:1265722532,bc29090a3ab522100641720610ce2a36:660559424</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Excel Upload Handler">6bb218c7833d62100353f7b6feaad316</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-02 05:43:32</sys_created_on>
+        <sys_db_object display_value="" name="catalog_script_client">catalog_script_client</sys_db_object>
+        <sys_id>860d1cde7bd84c20a2b1419438a70400</sys_id>
+        <sys_metadata>4488418683b522100353f7b6feaad332</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Excel Upload Handler</sys_name>
+        <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
+        <sys_scope_delete display_value="">3da91bf3bb5b44baa3f2bfec9981dfd9</sys_scope_delete>
+        <sys_update_name>catalog_script_client_4488418683b522100353f7b6feaad332</sys_update_name>
+        <sys_update_version display_value="catalog_script_client_4488418683b522100353f7b6feaad332">42fdb3be83b962100353f7b6feaad30d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-02 05:43:32</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

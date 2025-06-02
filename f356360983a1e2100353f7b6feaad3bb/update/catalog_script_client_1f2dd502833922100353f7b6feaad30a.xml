@@ -8,7 +8,7 @@
         <applies_target_record>false</applies_target_record>
         <applies_to>item</applies_to>
         <cat_item display_value="Show Upload File">8af034ca833522100353f7b6feaad365</cat_item>
-        <cat_variable>IO:7b578d4683b522100353f7b6feaad32e</cat_variable>
+        <cat_variable>IO:80f4a332837962100353f7b6feaad3cb</cat_variable>
         <condition/>
         <description/>
         <field/>
@@ -19,48 +19,32 @@
         <order/>
         <published_ref/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
-  if (isLoading || newValue === '') {
-    return;
-  }
-  
-  // 确认用户上传了 Excel 文件
-//   if (newValue.toLowerCase().endsWith('.xlsx') || newValue.toLowerCase().endsWith('.xls')) {
-    g_form.addInfoMessage('正在处理 Excel 文件，请稍候...');
-    
-    // 获取当前请求项的 sys_id
-    var requestItemId = g_form.getUniqueValue();
-    
-    // 调用服务器端脚本处理 Excel
-    var ga = new GlideAjax('ExcelProcessor');
-    ga.addParam('sysparm_name', 'processExcel');
-    ga.addParam('sysparm_request_item', requestItemId);
-    ga.addParam('sysparm_file_name', newValue);
-    
-    ga.onreadystatechange = function() {
-      if (ga.readyState == 4 && ga.status == 200) {
-        var response = JSON.parse(ga.responseXML.documentElement.getAttribute('answer'));
-        
-        if (response.success) {
-          g_form.addInfoMessage('Excel 数据已成功导入到 MRVS！');
-          g_form.refresh(); // 刷新表单以显示更新的 MRVS 数据
-        } else {
-          g_form.addErrorMessage('处理失败: ' + response.error);
-        }
-      }
-    };
-    ga.send();
-//   } else {
-//     g_form.addWarningMessage('请上传 .xlsx 或 .xls 格式的文件');
-//   }
-}
-]]></script>
+    if (isLoading) {
+        return;
+    }
+    if (newValue == '') {
+        g_form.clearValue("multi_row_variable_set");
+    }
+
+    var ajax = new GlideAjax('ExcelToMRVSProcessor');
+    ajax.addParam('sysparm_name', 'addExceldatainMRVS');
+    ajax.addParam('sysparm_existing', g_form.getValue('upload_attachment'));
+    ajax.getXML(getRITMdata);
+
+    function getRITMdata(response) {
+        var answer = response.responseXML.documentElement.getAttribute("answer");
+        alert(answer);
+        g_form.setValue('multi_row_variable_set', answer); // this is mrvs internal name
+
+    }
+}]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-05-30 08:36:18</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>1f2dd502833922100353f7b6feaad30a</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>Process Excel Attachment</sys_name>
         <sys_overrides/>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
@@ -68,11 +52,11 @@
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
         <sys_update_name>catalog_script_client_1f2dd502833922100353f7b6feaad30a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-30 08:44:17</sys_updated_on>
+        <sys_updated_on>2025-06-02 05:29:38</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>
-        <va_supported>false</va_supported>
+        <va_supported>true</va_supported>
         <variable_set/>
         <view/>
     </catalog_script_client>
