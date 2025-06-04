@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
+    <io_set_item action="DELETE">
+        <order>100</order>
+        <sc_cat_item display_value="Request Catalog Item">5d9efe6283f122100353f7b6feaad3d5</sc_cat_item>
+        <sys_class_name>io_set_item</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-03 05:13:09</sys_created_on>
+        <sys_id>dc6515138335e2100353f7b6feaad348</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Get rejected Var.Request Catalog Item</sys_name>
+        <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
+        <sys_update_name>io_set_item_dc6515138335e2100353f7b6feaad348</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-03 05:13:09</sys_updated_on>
+        <variable_set display_value="Get rejected Var">2ea419538335e2100353f7b6feaad324</variable_set>
+    </io_set_item>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</application>
+        <file_path/>
+        <instance_id>20e4f0f51b9ac61078c7cb7b234bcb8a</instance_id>
+        <instance_name>dev271709</instance_name>
+        <name>io_set_item_dc6515138335e2100353f7b6feaad348</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item"><io_set_item action="INSERT_OR_UPDATE"><order>100</order><sc_cat_item display_value="Request Catalog Item">5d9efe6283f122100353f7b6feaad3d5</sc_cat_item><sys_class_name>io_set_item</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-06-03 05:13:09</sys_created_on><sys_id>dc6515138335e2100353f7b6feaad348</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Get rejected Var.Request Catalog Item</sys_name><sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package><sys_policy/><sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope><sys_update_name>io_set_item_dc6515138335e2100353f7b6feaad348</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-06-03 05:13:09</sys_updated_on><variable_set display_value="Get rejected Var">2ea419538335e2100353f7b6feaad324</variable_set></io_set_item></record_update>]]></payload>
+        <payload_hash>-1488577411</payload_hash>
+        <record_name>Get rejected Var.Request Catalog Item</record_name>
+        <reverted_from/>
+        <source>5fcca34983a5e2100353f7b6feaad316</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-03 05:13:09</sys_created_on>
+        <sys_id>5c6599938335e2100353f7b6feaad34a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19734352d490000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-03 05:13:09</sys_updated_on>
+        <type>Catalog Variable Set</type>
+        <update_guid>506599933635e210560f6d3e765a3a4a</update_guid>
+        <update_guid_history>506599933635e210560f6d3e765a3a4a:-1488577411</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Get rejected Var.Request Catalog Item">7bbe9dd38335e2100353f7b6feaad364</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-03 05:54:05</sys_created_on>
+        <sys_db_object display_value="" name="io_set_item">io_set_item</sys_db_object>
+        <sys_id>146035e9ef554f1c90ebb35af9c1f3f1</sys_id>
+        <sys_metadata>dc6515138335e2100353f7b6feaad348</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get rejected Var.Request Catalog Item</sys_name>
+        <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
+        <sys_scope_delete display_value="">3da91bf3bb5b44baa3f2bfec9981dfd9</sys_scope_delete>
+        <sys_update_name>io_set_item_dc6515138335e2100353f7b6feaad348</sys_update_name>
+        <sys_update_version display_value="io_set_item_dc6515138335e2100353f7b6feaad348">5c6599938335e2100353f7b6feaad34a</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-03 05:54:05</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
