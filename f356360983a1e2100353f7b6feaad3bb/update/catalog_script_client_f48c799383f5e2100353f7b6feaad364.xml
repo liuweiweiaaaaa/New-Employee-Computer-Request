@@ -37,7 +37,7 @@
 
     function getdata(response) {
 		var answer =JSON.parse(response);
-		alert(response);
+		//alert(response);
 		g_form.setValue('question1', answer.question1);
 		g_form.setValue('question2', answer.question2);
 		g_form.setValue('question3', answer.question3);
@@ -70,7 +70,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f48c799383f5e2100353f7b6feaad364</sys_id>
-        <sys_mod_count>50</sys_mod_count>
+        <sys_mod_count>51</sys_mod_count>
         <sys_name>Get Value</sys_name>
         <sys_overrides/>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
@@ -78,7 +78,7 @@
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
         <sys_update_name>catalog_script_client_f48c799383f5e2100353f7b6feaad364</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-04 06:04:26</sys_updated_on>
+        <sys_updated_on>2025-06-04 07:46:38</sys_updated_on>
         <table/>
         <type>onLoad</type>
         <ui_type>10</ui_type>

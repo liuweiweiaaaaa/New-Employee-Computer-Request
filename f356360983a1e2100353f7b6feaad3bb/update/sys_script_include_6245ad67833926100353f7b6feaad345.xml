@@ -8,24 +8,38 @@
         <description/>
         <mobile_callable>false</mobile_callable>
         <name>SubmitValueUtils</name>
-        <sandbox_callable>false</sandbox_callable>
+        <sandbox_callable>true</sandbox_callable>
         <script><![CDATA[var SubmitValueUtils = Class.create();
 SubmitValueUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
-		submitPreviousValues: function(){
-		var sysId = this.getParameter('sys_id');
-		var question1 = this.getParameter('question1');
-		var question2 = this.getParameter('question2');
-		var question3 = this.getParameter('question3');
-		var gr = new GlideRecord('sc_req_item');
-		gr.get(sysId);
-		var result ={};
-		gr.variables.question1 = question1;
-		gr.variables.question2 = question2;
-		gr.variables.question3 = question3;
-		gr.update();
-		return "true";
+    submitPreviousValues: function() {
+        var sysId = this.getParameter('sysparm_sysId');
+        var question1 = this.getParameter('sysparm_squestion1');
+        var question2 = this.getParameter('sysparm_squestion2');
+        var question3 = this.getParameter('sysparm_squestion3');
+        var gr = new GlideRecordSecure('sc_req_item');
+        gr.addQuery('number', sysId);
+        //var result ={};
+        // gr.variables.Question1 = question1;
+        // gr.variables.Question2 = question2;
+        //gr.variables.Question3 = question3;
+        var variables = {};
+        if (gr.variables) {
+            variables = JSON.parse(gr.variables);
+        }
+       gs.error('gr=============' + variables);
+        // 添加或修改变量值
+        variables['question1'] = question1; // 替换为你的变量名和值
+        variables['question2'] = question2;
+        variables['question3'] = question3;
 
-	},
+        // 保存回记录
+        gr.variables = JSON.stringify(variables);
+        gr.state = 100;
+        gr.update();
+        gs.error('gr=============' + gr.state);
+        return 'true';
+
+    },
 
     type: 'SubmitValueUtils'
 });]]></script>
@@ -33,14 +47,14 @@ SubmitValueUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-06-04 01:10:07</sys_created_on>
         <sys_id>6245ad67833926100353f7b6feaad345</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>SubmitValueUtils</sys_name>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
-        <sys_policy>read</sys_policy>
+        <sys_policy>protected</sys_policy>
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
         <sys_update_name>sys_script_include_6245ad67833926100353f7b6feaad345</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-04 01:10:07</sys_updated_on>
+        <sys_updated_on>2025-06-04 12:18:52</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>6245ad67833926100353f7b6feaad345</id>

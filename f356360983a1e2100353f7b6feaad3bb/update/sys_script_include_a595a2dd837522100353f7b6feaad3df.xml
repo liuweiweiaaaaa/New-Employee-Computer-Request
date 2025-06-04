@@ -10,36 +10,35 @@
         <name>PDFGenerator</name>
         <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[var PDFGenerator = Class.create();
-PDFGenerator.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+PDFGenerator.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     generatePDF: function() {
         try {
-            var tableName = this.getParameter('sysparm_table');
-            var recordId = this.getParameter('sysparm_record_id');
+            var sysId = this.getParameter('sysparm_sysId');
+            var question1 = this.getParameter('sysparm_squestion1');
+            var question2 = this.getParameter('sysparm_squestion2');
+            var question3 = this.getParameter('sysparm_squestion3');
+            var gr = new GlideRecord('sc_req_item');
+            gr.addQuery('number', sysId);
+            gr.query();
             
-            // 获取记录
-            var gr = new GlideRecord(tableName);
-            if (!gr.get(recordId)) {
-                return "";
+            if (gr.next()) {
+                var variables = {};
+                if (gr.variables) {
+                    variables = JSON.parse(gr.variables);
+                }
+gs.error('gr1=============' + variables);
+                // 添加或修改变量值
+                variables['question1'] = question1; // 替换为你的变量名和值
+                variables['question2'] = question2;
+                variables['question3'] = question3;
+
+                // 保存回记录
+                gr.variables = JSON.stringify(variables);
+				gs.error('gr2============' + gr.variables);
+                gr.setValue('state', 2);
+                gr.update();
+                return 'true';
             }
-            
-            // 创建PDF内容
-            var content = "=== 记录详情 ===\n\n";
-            content += "编号: " + gr.getDisplayValue() + "\n";
-            content += "创建日期: " + gr.sys_created_on + "\n\n";
-            content += "描述:\n" + gr.description + "\n";
-            
-            // 生成PDF
-            var renderer = new PDFRender();
-            renderer.addContent(content);
-            renderer.setHeader(gr.getRecordClassName() + " 详情");
-            var pdf = renderer.render();
-            
-            // 保存为附件
-            var attachment = new GlideSysAttachment();
-            var fileName = gr.getDisplayValue() + ".pdf";
-            var attachmentId = attachment.write(gr, fileName, 'application/pdf', pdf);
-            
-            return attachmentId;
         } catch (e) {
             gs.error("生成PDF失败: " + e);
             return "";
@@ -51,14 +50,14 @@ PDFGenerator.prototype = Object.extendsObject(AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-05-28 05:56:47</sys_created_on>
         <sys_id>a595a2dd837522100353f7b6feaad3df</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>PDFGenerator</sys_name>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
-        <sys_policy>read</sys_policy>
+        <sys_policy/>
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
         <sys_update_name>sys_script_include_a595a2dd837522100353f7b6feaad3df</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-28 05:56:47</sys_updated_on>
+        <sys_updated_on>2025-06-04 14:05:53</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>a595a2dd837522100353f7b6feaad3df</id>

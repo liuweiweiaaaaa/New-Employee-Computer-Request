@@ -3,7 +3,7 @@
         <active>true</active>
         <applies_catalog>true</applies_catalog>
         <applies_extended>false</applies_extended>
-        <applies_req_item>true</applies_req_item>
+        <applies_req_item>false</applies_req_item>
         <applies_sc_task>false</applies_sc_task>
         <applies_target_record>false</applies_target_record>
         <applies_to>item</applies_to>
@@ -22,25 +22,29 @@
     //Type appropriate comment here, and begin script below
     var urlParams = new URLSearchParams(top.window.location.search);
     var sysId = urlParams.get('req_item_id');
-    if (sysId != "") {
+    //alert(sysId);
+    if (sysId != null) {
         var question1 = g_form.getValue("question1");
         var question2 = g_form.getValue("question2");
         var question3 = g_form.getValue("question3");
-        var ga = new GlideAjax('SubmitValueUtils');
-        ga.addParam('sysparm_name', 'submitPreviousValues');
+		//alert(question1);
+        var ga = new GlideAjax('PDFGenerator');
+        ga.addParam('sysparm_name', 'generatePDF');
         ga.addParam('sysparm_sysId', sysId);
-        ga.addParam('question1', question1);
-        ga.addParam('question2', question2);
-        ga.addParam('question3', question3);
+        ga.addParam('sysparm_squestion1', question1);
+        ga.addParam('sysparm_squestion2', question2);
+        ga.addParam('sysparm_squestion3', question3);
         ga.getXMLAnswer(callBack);
-        return true;
+        return false;
     }
 
     function callBack(response) {
+		alert(response);
         if (response === "true") {
-			return true;
-
-
+            var URL = "sp?id=index";
+            top.window.onbeforeunload = null;
+            top.window.onunload = null;
+            top.window.location = URL;
         }
 
     }
@@ -52,7 +56,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>97936563833926100353f7b6feaad35c</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>Submit Value</sys_name>
         <sys_overrides/>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
@@ -60,7 +64,7 @@
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
         <sys_update_name>catalog_script_client_97936563833926100353f7b6feaad35c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-04 01:34:26</sys_updated_on>
+        <sys_updated_on>2025-06-04 11:57:48</sys_updated_on>
         <table/>
         <type>onSubmit</type>
         <ui_type>10</ui_type>
