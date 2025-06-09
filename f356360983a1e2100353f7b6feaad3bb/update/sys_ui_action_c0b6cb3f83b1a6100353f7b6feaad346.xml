@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
     <sys_ui_action action="INSERT_OR_UPDATE">
-        <action_name>DownloadPDF</action_name>
+        <action_name/>
         <active>true</active>
         <client>true</client>
         <client_script_v2><![CDATA[function onClick(g_form) {
@@ -17,7 +17,7 @@
         <form_style/>
         <format_for_configurable_workspace>false</format_for_configurable_workspace>
         <hint/>
-        <isolate_script>false</isolate_script>
+        <isolate_script>true</isolate_script>
         <list_action>false</list_action>
         <list_banner_button>false</list_banner_button>
         <list_button>false</list_button>
@@ -27,44 +27,41 @@
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
         <messages/>
-        <name>DownloadPDF</name>
-        <onclick>printPDF()</onclick>
+        <name>Fulfiller Check</name>
+        <onclick/>
         <order>100</order>
-        <script><![CDATA[function printPDF(){
-var uri = g_form.getTableName()+'.do?sys_id='+g_form.getUniqueValue()+'&PDF';
-g_navigation.open(uri);
-}]]></script>
+        <script/>
         <show_insert>true</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
         <show_update>true</show_update>
         <sys_class_name>sys_ui_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-05-28 06:08:38</sys_created_on>
+        <sys_created_on>2025-06-05 02:46:04</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>6858e25183b522100353f7b6feaad3d5</sys_id>
-        <sys_mod_count>4</sys_mod_count>
-        <sys_name>DownloadPDF</sys_name>
+        <sys_id>c0b6cb3f83b1a6100353f7b6feaad346</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Fulfiller Check</sys_name>
         <sys_overrides/>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
         <sys_policy/>
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
-        <sys_update_name>sys_ui_action_6858e25183b522100353f7b6feaad3d5</sys_update_name>
+        <sys_update_name>sys_ui_action_c0b6cb3f83b1a6100353f7b6feaad346</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-05 11:04:38</sys_updated_on>
-        <table>x_1755713_new_em_0_employee_info</table>
-        <ui11_compatible>false</ui11_compatible>
+        <sys_updated_on>2025-06-05 02:46:04</sys_updated_on>
+        <table>sc_req_item</table>
+        <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
     </sys_ui_action>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
-        <id>6858e25183b522100353f7b6feaad3d5</id>
+        <id>c0b6cb3f83b1a6100353f7b6feaad346</id>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-05-28 06:08:37</sys_created_on>
-        <sys_id>1e88ea9183b522100353f7b6feaad3de</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_created_on>2025-06-05 02:46:04</sys_created_on>
+        <sys_id>55e6c7fb83b1a6100353f7b6feaad36b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-28 08:35:12</sys_updated_on>
+        <sys_updated_on>2025-06-05 02:46:04</sys_updated_on>
         <table>sys_ui_action</table>
         <use_es_latest>false</use_es_latest>
     </sys_es_latest_script>

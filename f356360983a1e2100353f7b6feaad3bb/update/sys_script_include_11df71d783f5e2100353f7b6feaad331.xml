@@ -13,35 +13,19 @@
 GetValueUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 	getPreviousValues: function(){
 		var sysId = this.getParameter('sysparm_sysId');
-		var question1 = this.getParameter('question1');
-		var question2 = this.getParameter('question2');
-		var question3 = this.getParameter('question3');
 		var gr = new GlideRecord('sc_req_item');
 		gr.addQuery('number', sysId);
 		var result ={};
         gr.query();
 		if (gr.next()) {
-			result.question1=question1 +'';
-			result.question2=question2 +'';
-			result.question3=question3 +'';
-            //gr.setValue(gr.variables[question1+ ''], question1+'');
-            //gr.update();
+			result.question1=gr.variables.question1 +'';
+			result.question2=gr.variables.question2 +'';
+			result.question3=gr.variables.question3 +'';
 			gs.error('gr.variables===========' + result);
             return JSON.stringify(result);
         }else{
 			return 'false';
 		}
-		//gr.get(sysId);
-		//var result ={};
-		//gr.get(sysId);
-		//gr.addQuery('Number','RITM0010439');
-		//gr.query();
-		// for(var key in gr.variables){
-		// 	result[key] = gr.variables[key]+'';
-
-		// }
-		// return JSON.stringify(gr.variables);
-
 	},
 
     type: 'GetValueUtils'
@@ -50,14 +34,14 @@ GetValueUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-06-03 08:49:41</sys_created_on>
         <sys_id>11df71d783f5e2100353f7b6feaad331</sys_id>
-        <sys_mod_count>64</sys_mod_count>
+        <sys_mod_count>67</sys_mod_count>
         <sys_name>GetValueUtils</sys_name>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
         <sys_policy/>
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
         <sys_update_name>sys_script_include_11df71d783f5e2100353f7b6feaad331</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-04 06:04:57</sys_updated_on>
+        <sys_updated_on>2025-06-05 11:58:17</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>11df71d783f5e2100353f7b6feaad331</id>

@@ -44,7 +44,7 @@
         <mask_use_encryption>false</mask_use_encryption>
         <name>user_name</name>
         <not_available_conversation>false</not_available_conversation>
-        <order/>
+        <order>100</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
@@ -79,14 +79,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-06-02 04:43:24</sys_created_on>
         <sys_id>80e4844783f962100353f7b6feaad3d6</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>User Name</sys_name>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
         <sys_policy/>
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
         <sys_update_name>item_option_new_80e4844783f962100353f7b6feaad3d6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-02 05:42:11</sys_updated_on>
+        <sys_updated_on>2025-06-05 11:11:56</sys_updated_on>
         <table/>
         <tooltip/>
         <topic_block/>

@@ -22,24 +22,26 @@
     //Type appropriate comment here, and begin script below
     var urlParams = new URLSearchParams(top.window.location.search);
     var sysId = urlParams.get('req_item_id');
+	var fromItem = urlParams.get('from');
     //alert(sysId);
     if (sysId != null) {
         var question1 = g_form.getValue("question1");
         var question2 = g_form.getValue("question2");
         var question3 = g_form.getValue("question3");
 		//alert(question1);
-        var ga = new GlideAjax('PDFGenerator');
-        ga.addParam('sysparm_name', 'generatePDF');
+        var ga = new GlideAjax('SubmitGenerator');
+        ga.addParam('sysparm_name', 'generate');
         ga.addParam('sysparm_sysId', sysId);
         ga.addParam('sysparm_squestion1', question1);
         ga.addParam('sysparm_squestion2', question2);
         ga.addParam('sysparm_squestion3', question3);
+		ga.addParam('sysparm_from', fromItem);
         ga.getXMLAnswer(callBack);
         return false;
     }
 
     function callBack(response) {
-		alert(response);
+		//alert(response);
         if (response === "true") {
             var URL = "sp?id=index";
             top.window.onbeforeunload = null;
@@ -56,7 +58,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>97936563833926100353f7b6feaad35c</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>Submit Value</sys_name>
         <sys_overrides/>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
@@ -64,7 +66,7 @@
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
         <sys_update_name>catalog_script_client_97936563833926100353f7b6feaad35c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-04 11:57:48</sys_updated_on>
+        <sys_updated_on>2025-06-05 11:03:38</sys_updated_on>
         <table/>
         <type>onSubmit</type>
         <ui_type>10</ui_type>

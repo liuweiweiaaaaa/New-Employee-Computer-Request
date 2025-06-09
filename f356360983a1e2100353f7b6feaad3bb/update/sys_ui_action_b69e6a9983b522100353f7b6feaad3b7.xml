@@ -30,11 +30,11 @@
         <name>Update Field with Confirmation</name>
         <onclick>showPage()</onclick>
         <order>100</order>
-        <script><![CDATA[function showPage(){
-	var gdw = new GlideModal("x_1755713_new_em_0_confirmation_dialog");
-	gdw.setTitle('Reopen');
-gdw.setPreference('sysid', g_form.getUniqueValue());
-	gdw.render();
+        <script><![CDATA[function showPage() {
+    var gdw = new GlideModal("x_1755713_new_em_0_confirmation_dialog");
+    gdw.setTitle('Reopen');
+    gdw.setPreference('sysid', g_form.getUniqueValue());
+    gdw.render();
 }]]></script>
         <show_insert>true</show_insert>
         <show_multiple_update>false</show_multiple_update>
@@ -46,7 +46,7 @@ gdw.setPreference('sysid', g_form.getUniqueValue());
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b69e6a9983b522100353f7b6feaad3b7</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Update Field with Confirmation</sys_name>
         <sys_overrides/>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
@@ -54,7 +54,7 @@ gdw.setPreference('sysid', g_form.getUniqueValue());
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
         <sys_update_name>sys_ui_action_b69e6a9983b522100353f7b6feaad3b7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-29 01:14:12</sys_updated_on>
+        <sys_updated_on>2025-06-05 11:22:17</sys_updated_on>
         <table>x_1755713_new_em_0_employee_info</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
@@ -64,9 +64,9 @@ gdw.setPreference('sysid', g_form.getUniqueValue());
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-05-28 06:36:22</sys_created_on>
         <sys_id>fceee69983b522100353f7b6feaad3bc</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-28 06:36:22</sys_updated_on>
+        <sys_updated_on>2025-06-05 11:22:14</sys_updated_on>
         <table>sys_ui_action</table>
         <use_es_latest>false</use_es_latest>
     </sys_es_latest_script>

@@ -22,16 +22,10 @@
     //Type appropriate comment here, and begin script below
     var urlParams = new URLSearchParams(top.window.location.search);
     var sysId = urlParams.get('req_item_id');
-	var question1 = urlParams.get('Q1');
-	var question2 = urlParams.get('Q2');
-	var question3 = urlParams.get('Q3');
     if (sysId) {
         var ga = new GlideAjax('GetValueUtils');
         ga.addParam('sysparm_name', 'getPreviousValues');
         ga.addParam('sysparm_sysId', sysId);
-		ga.addParam('question1', question1);
-		ga.addParam('question2', question2);
-		ga.addParam('question3', question3);
         ga.getXMLAnswer(getdata);
     }
 
@@ -41,25 +35,6 @@
 		g_form.setValue('question1', answer.question1);
 		g_form.setValue('question2', answer.question2);
 		g_form.setValue('question3', answer.question3);
-		//console.log('~~~~~~~~~~~~~~~~~~'+answer['question1']);
-		// for(var key in response){
-		// 	g_form.setValue(key, response[key]);
-		// 	console.log('~~~~~~~~~~~~~~~~~~'+response[key]);
-		// }
-        // var answer = response.responseXML.documentElement.getAttribute("answer");
-        // alert(answer);
-        // //if (answer) {
-        //         var data = JSON.parse(answer);
-        //         //if (data.question1) {
-        //             g_form.setValue('question1', '11');
-        //         //}
-        //         //if (data.question2) {
-        //             g_form.setValue('question2', '22');
-        //         //}
-        //         //if (data.question3) {
-        //             g_form.setValue('question3', '33');
-        //         //}
-        // //}
 
     }
 
@@ -70,7 +45,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f48c799383f5e2100353f7b6feaad364</sys_id>
-        <sys_mod_count>51</sys_mod_count>
+        <sys_mod_count>53</sys_mod_count>
         <sys_name>Get Value</sys_name>
         <sys_overrides/>
         <sys_package display_value="New Employee Computer Request" source="x_1755713_new_em_0">f356360983a1e2100353f7b6feaad3bb</sys_package>
@@ -78,7 +53,7 @@
         <sys_scope display_value="New Employee Computer Request">f356360983a1e2100353f7b6feaad3bb</sys_scope>
         <sys_update_name>catalog_script_client_f48c799383f5e2100353f7b6feaad364</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-04 07:46:38</sys_updated_on>
+        <sys_updated_on>2025-06-05 11:57:56</sys_updated_on>
         <table/>
         <type>onLoad</type>
         <ui_type>10</ui_type>
